@@ -1,0 +1,50 @@
+.tokem{
+    height: 220px;
+    align-items: center;
+    padding: calc(50vh - 150px) calc(50vw - 120px);
+    place-items: center;
+    animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.botones{
+    font-size: 20px;
+    text-align: center;
+}
+
+.boton{
+    font-size: 60px;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+
+}
+
+.negro{
+    background-color: rgb(20, 0, 0);
+}
+.blanco{
+    background-color: white;
+}
+.verde{
+    background-color: rgb(0, 24, 0);
+}
+.azul{
+    background-color: lightblue;
+}
+.verdeC{
+    background-color: greenyellow;
+}
+.gris{
+    background-color: grey;
+}
+.rojo{
+    background-color: rgb(99, 0, 0);
+}
+
+.botones{
+    color: white;
+}
