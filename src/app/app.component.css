@@ -10,6 +10,14 @@
     100% {opacity: 1;}
 }
 
+.fondo{
+    position: absolute;
+    z-index: 2;
+    opacity: 12%;
+    height: 100vh;
+    left: calc(30% - 50vh)
+}
+
 .botones{
     font-size: 20px;
     text-align: center;
@@ -42,7 +50,7 @@
     background-color: grey;
 }
 .rojo{
-    background-color: rgb(99, 0, 0);
+    background-color: rgb(59, 0, 0);
 }
 
 .botones{
