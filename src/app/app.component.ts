@@ -26,6 +26,7 @@ export class AppComponent {
   resultado: number = 0;
   resultadoFinal: number = 0;
 
+
   FmasUno(unidad: number) {
     this.masUno = unidad += this.masUno;
     if (this.masUno > 8) {
@@ -165,7 +166,7 @@ export class AppComponent {
 
   generate() {/* 
     let num = Math.floor(Math.random()*100);
-    console.log(num); */
+    console.log(num); */  /* pito */
 
     /* 
           setTimeout(() => {
@@ -246,51 +247,48 @@ export class AppComponent {
         + this.menosSiete + this.menosOcho) {
         this.resultadoFinal = 15
       };
-    }, 2000);
-    /* 
-        if (this.resultado <= this.sectario){
-          this.resultadoFinal = 1}
-          else if (this.resultado <= this.sectario + this.fallo){
-            this.resultadoFinal = 2}
-            else if (this.resultado <= this.sectario + this.fallo + this.arcano){
-              this.resultadoFinal = 3}
-              else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera){
-                this.resultadoFinal = 4}
-                else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul){
-                  this.resultadoFinal = 5}
-                  else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul + this.masUno){
-                    this.resultadoFinal = 6}
-                    else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul + this.masUno + this.cero){
-                      this.resultadoFinal = 7}
-                      else if (this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul + this.masUno + this.cero
-                        + this.menosUno){
-                        this.resultadoFinal = 8}
-                        else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul + this.masUno + this.cero
-                          + this.menosUno + this.menosDos){
-                          this.resultadoFinal = 9}
-                          else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul + this.masUno + this.cero
-                            + this.menosUno + this.menosDos + this.menosTres){
-                            this.resultadoFinal = 10}
-                            else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul + this.masUno + this.cero
-                              + this.menosUno + this.menosDos + this.menosTres + this.menosCuatro){
-                              this.resultadoFinal = 11}
-                              else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul + this.masUno + this.cero
-                                + this.menosUno + this.menosDos + this.menosTres + this.menosCuatro + this.menosCinco){
-                                this.resultadoFinal = 12}
-                                else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul + this.masUno + this.cero
-                                  + this.menosUno + this.menosDos + this.menosTres + this.menosCuatro + this.menosCinco + this.menosSeis){
-                                  this.resultadoFinal = 13}
-                                  else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul + this.masUno + this.cero
-                                    + this.menosUno + this.menosDos + this.menosTres + this.menosCuatro + this.menosCinco + this.menosSeis
-                                    + this.menosSiete){
-                                    this.resultadoFinal = 14}
-                                    else if (this.resultado <= this.sectario + this.fallo + this.arcano + this.calavera + this.cosaAzul + this.masUno + this.cero
-                                      + this.menosUno + this.menosDos + this.menosTres + this.menosCuatro + this.menosCinco + this.menosSeis
-                                      + this.menosSiete + this.menosOcho){
-                                      this.resultadoFinal = 15}; */
+      console.log("Azar " + this.resultado);
+      console.log("final " + this.resultadoFinal);
+    }, 2000);}
+  
 
+    guardar(){ 
+      localStorage.setItem('sectario', this.sectario.toString());
+      localStorage.setItem('fallo', this.fallo.toString());
+      localStorage.setItem('arcano', this.arcano.toString());
+      localStorage.setItem('calavera', this.calavera.toString());
+      localStorage.setItem('cosaAzul', this.cosaAzul.toString());
+      localStorage.setItem('masUno', this.masUno.toString());
+      localStorage.setItem('cero', this.cero.toString());
+      localStorage.setItem('menosSiete', this.menosSiete.toString());
+      localStorage.setItem('menosSeis', this.menosSeis.toString());
+      localStorage.setItem('menosCinco', this.menosCinco.toString());
+      localStorage.setItem('menosCuatro', this.menosCuatro.toString());
+      localStorage.setItem('menosTres', this.menosTres.toString());
+      localStorage.setItem('menosDos', this.menosDos.toString());
+      localStorage.setItem('menosUno', this.menosUno.toString());
+    /* localStorage.setItem; this.sectario */
+    };
+   
+    cargar(){
+      this.fallo = Number(localStorage.getItem('fallo'));
+      this.sectario = Number(localStorage.getItem('sectario'));
+      this.arcano = Number(localStorage.getItem('arcano'));
+      this.calavera = Number(localStorage.getItem('calavera'));
+      this.cosaAzul = Number(localStorage.getItem('cosaAzul'));
+      this.masUno = Number(localStorage.getItem('masUno'));
+      this.cero = Number(localStorage.getItem('cero'));
+      this.menosSiete = Number(localStorage.getItem('menosSiete'));
+      this.menosSeis = Number(localStorage.getItem('menosSeis'));
+      this.menosCinco = Number(localStorage.getItem('menosCinco'));
+      this.menosCuatro = Number(localStorage.getItem('menosCuatro'));
+      this.menosTres = Number(localStorage.getItem('menosTres'));
+      this.menosDos = Number(localStorage.getItem('menosDos'));
+      this.menosUno = Number(localStorage.getItem('menosUno'));
 
-  }
-
-
+      /* 
+      this.sectario = Number(localStorage.getItem('sectario')) */
+      /* localStorage.getItem; this.sectario */
+    };
+    
 }
