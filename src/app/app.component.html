@@ -1,112 +1,107 @@
-<!-- <button (click)="generate()">holi</button>
-{{resultadoFinal}} - - {{resultado}} -->
- <div ><img src="assets/fondo.jpg"  class="fondo" (click)="generate()"></div>
-   <div class="tokem, ">
-        <img src="assets/pulsa.png"     *ngIf="resultadoFinal === 0" class="tokem negro" (click)="generate()">
-        <img src="assets/sectario.png"  *ngIf="resultadoFinal === 1" class="tokem verde" (click)="generate()">
-        <img src="assets/fallo.png"     *ngIf="resultadoFinal === 2" class="tokem rojo" (click)="generate()">
-        <img src="assets/arcano.png"    *ngIf="resultadoFinal === 3" class="tokem azul" (click)="generate()">
-        <img src="assets/calavera.png"  *ngIf="resultadoFinal === 4" class="tokem naranja" (click)="generate()">
-        <img src="assets/coso.png"      *ngIf="resultadoFinal === 5" class="tokem naranja" (click)="generate()">
-        <img src="assets/uno.png"       *ngIf="resultadoFinal === 6" class="tokem verdeC" (click)="generate()">
-        <img src="assets/cero.png"      *ngIf="resultadoFinal === 7" class="tokem blanco" (click)="generate()">
-        <img src="assets/menos1.png"    *ngIf="resultadoFinal === 8" class="tokem negro" (click)="generate()">
-        <img src="assets/menos2.png"    *ngIf="resultadoFinal === 9" class="tokem negro" (click)="generate()">
-        <img src="assets/menos3.png"    *ngIf="resultadoFinal === 10" class="tokem negro" (click)="generate()">
-        <img src="assets/menos4.png"    *ngIf="resultadoFinal === 11" class="tokem negro" (click)="generate()">
-        <img src="assets/menos5.png"    *ngIf="resultadoFinal === 12" class="tokem negro" (click)="generate()">
-        <img src="assets/menos6.png"    *ngIf="resultadoFinal === 13" class="tokem negro" (click)="generate()">
-        <img src="assets/menos7.png"    *ngIf="resultadoFinal === 14" class="tokem negro" (click)="generate()">
-        <img src="assets/menos8.png"    *ngIf="resultadoFinal === 15" class="tokem negro" (click)="generate()">
-        <img src="assets/espera.png"    *ngIf="resultadoFinal === 48" class="tokem espera" (click)="generate()">
-    </div>
+<div ><img src="assets/fondo.jpg"  class="fondo" (click)="generar_ficha_aleatoria()"></div>
+<div class="token, ">
+  <img src="assets/pulsa.png"     *ngIf="resultado == ''" class="token negro" (click)="generar_ficha_aleatoria()">
+  <img src="assets/sectario.png"  *ngIf="resultado == 'sectario'" class="token verde" (click)="generar_ficha_aleatoria()">
+  <img src="assets/fallo.png"     *ngIf="resultado == 'fallo'" class="token rojo" (click)="generar_ficha_aleatoria()">
+  <img src="assets/arcano.png"    *ngIf="resultado == 'arcano'" class="token azul" (click)="generar_ficha_aleatoria()">
+  <img src="assets/calavera.png"  *ngIf="resultado == 'calavera'" class="token naranja" (click)="generar_ficha_aleatoria()">
+  <img src="assets/coso.png"      *ngIf="resultado == 'cosaAzul'" class="token naranja" (click)="generar_ficha_aleatoria()">
+  <img src="assets/uno.png"       *ngIf="resultado == 'uno'" class="token verdeC" (click)="generar_ficha_aleatoria()">
+  <img src="assets/cero.png"      *ngIf="resultado == 'cero'" class="token blanco" (click)="generar_ficha_aleatoria()">
+  <img src="assets/menos1.png"    *ngIf="resultado == 'menos1'" class="token negro" (click)="generar_ficha_aleatoria()">
+  <img src="assets/menos2.png"    *ngIf="resultado == 'menos2'" class="token negro" (click)="generar_ficha_aleatoria()">
+  <img src="assets/menos3.png"    *ngIf="resultado == 'menos3'" class="token negro" (click)="generar_ficha_aleatoria()">
+  <img src="assets/menos4.png"    *ngIf="resultado == 'menos4'" class="token negro" (click)="generar_ficha_aleatoria()">
+  <img src="assets/menos5.png"    *ngIf="resultado == 'menos5'" class="token negro" (click)="generar_ficha_aleatoria()">
+  <img src="assets/menos6.png"    *ngIf="resultado == 'menos6'" class="token negro" (click)="generar_ficha_aleatoria()">
+  <img src="assets/menos7.png"    *ngIf="resultado == 'menos7'" class="token negro" (click)="generar_ficha_aleatoria()">
+  <img src="assets/menos8.png"    *ngIf="resultado == 'menos8'" class="token negro" (click)="generar_ficha_aleatoria()">
+  <!-- <img src="assets/espera.png"    *ngIf="resultado == 'espera'" class="token espera" (click)="generar_ficha_aleatoria()"> -->
+</div>
 <br>
 <br>
 <hr>
 <hr>
 <hr>
-
 <br>
 <br>
 <div class="botones">
-  <button (click)="guardar()">Guardar</button><button (click)="cargar()">Cargar</button>
+  <button (click)="guardar_fichas()">Guardar</button>
+  <button (click)="cargar_fichas()">Cargar</button>
   <br>
   <br>
-<button class="boton" (click)="Fsectario(-1)"> - </button>
-ficha Sectario
-<button class="boton" (click)="Fsectario(1)">+</button>
-<br> {{sectario}} unidades
-<br>
-<br>
-<button class="boton" (click)="Ffallo(-1)">-</button>
-ficha fallo absoluto 
-<button class="boton" (click)="Ffallo(1)">+</button><br> 
-{{fallo}} unidades
-<br>
-<br>
-<button class="boton" (click)="Farcano(-1)">-</button>
-ficha Arcano son
-<button class="boton" (click)="Farcano(1)">+</button><br>  {{arcano}} unidades
-<br>
-<br>
-<button class="boton" (click)="Fcalavera(-1)">-</button>
-ficha Calavera son 
-<button class="boton" (click)="Fcalavera(1)">+</button><br> {{calavera}} unidades
-<br>
-<br>
-<button class="boton" (click)="FcosaAzul(-1)">-</button>
-dibujo raro
-<button class="boton" (click)="FcosaAzul(1)">+</button><br>  {{cosaAzul}} unidades
-<br>
-<br>
-<br>
-<br>
-<button class="boton" (click)="FmasUno(-1)">-</button>
-ficha +1 son 
-<button class="boton" (click)="FmasUno(1)">+</button><br> {{masUno}} unidades
-<br>
-<br>
-<button class="boton" (click)="Fcero(-1)">-</button>
-ficha +0 son 
-<button class="boton" (click)="Fcero(1)">+</button><br> {{cero}} unidades
-<br>
-<br>
-<button class="boton" (click)="FmenosUno(-1)">-</button>
-ficha -1 son 
-<button class="boton" (click)="FmenosUno(1)">+</button><br> {{menosUno}} unidades
-<br>
-<br>
-<button class="boton" (click)="FmenosDos(-1)">-</button>
-ficha -2 son 
-<button class="boton" (click)="FmenosDos(1)">+</button><br> {{menosDos}} unidades
-<br>
-<br>
-<button class="boton" (click)="FmenosTres(-1)">-</button>
-ficha -3 son 
-<button class="boton" (click)="FmenosTres(1)">+</button><br> {{menosTres}} unidades
-<br>
-<br>
-<button class="boton" (click)="FmenosCuatro(-1)">-</button>
-ficha -4 son 
-<button class="boton" (click)="FmenosCuatro(1)">+</button><br> {{menosCuatro}} unidades
-<br>
-<br>
-<button class="boton" (click)="FmenosCinco(-1)">-</button>
-ficha -5 son
-<button class="boton" (click)="FmenosCinco(1)">+</button><br>  {{menosCinco}} unidades
-<br>
-<br>
-<button class="boton" (click)="FmenosSeis(-1)">-</button>
-ficha -6 son 
-<button class="boton" (click)="FmenosSeis(1)">+</button><br> {{menosSeis}} unidades
-<br>
-<br>
-<button class="boton" (click)="FmenosSiete(-1)">-</button>
-ficha -7 son
-<button class="boton" (click)="FmenosSiete(1)">+</button><br>  {{menosSiete}} unidades
-<br>
-<br>
-<button class="boton" (click)="FmenosOcho(-1)">-</button>
-ficha -8 son 
-<button class="boton" (click)="FmenosOcho(1)">+</button><br> {{menosOcho}} unidades
+  <button class="boton" (click)="actualizar_fichas('sectario', -1)">-</button>
+  <i> Sectario ({{mapa_fichas_cantidad.get('sectario')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('sectario', 1)">+</button>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('fallo', -1)">-</button>
+  <i> Fallo absoluto ({{mapa_fichas_cantidad.get('fallo')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('fallo', 1)">+</button>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('arcano', -1)">-</button>
+  <i> Arcano ({{mapa_fichas_cantidad.get('arcano')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('arcano', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('calavera', -1)">-</button>
+  <i> Calavera ({{mapa_fichas_cantidad.get('calavera')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('calavera', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('cosaAzul', -1)">-</button>
+  <i> Cosa azul ({{mapa_fichas_cantidad.get('cosaAzul')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('cosaAzul', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('mas1', -1)">-</button>
+  <i> Ficha +1 ( {{mapa_fichas_cantidad.get('mas1')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('mas1', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('cero', -1)">-</button>
+  <i> Ficha +0 ({{mapa_fichas_cantidad.get('cero')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('cero', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('menos1', -1)">-</button>
+  <i> Ficha -1 ( {{mapa_fichas_cantidad.get('menos1')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('menos1', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('menos2', -1)">-</button>
+  <i> Ficha -2 ({{mapa_fichas_cantidad.get('menos2')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('menos2', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('menos3', -1)">-</button>
+  <i> Ficha -3 ({{mapa_fichas_cantidad.get('menos3')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('menos3', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('menos4', -1)">-</button>
+  <i> Ficha -4 ({{mapa_fichas_cantidad.get('menos4')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('menos4', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('menos5', -1)">-</button>
+  <i> Ficha -5 ({{mapa_fichas_cantidad.get('menos5')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('menos5', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('menos6', -1)">-</button>
+  <i> Ficha -6 ({{mapa_fichas_cantidad.get('menos6')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('menos6', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('menos7', -1)">-</button>
+  <i> Ficha -7 ({{mapa_fichas_cantidad.get('menos7')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('menos7', 1)">+</button><br>
+  <br>
+  <br>
+  <button class="boton" (click)="actualizar_fichas('menos8', -1)">-</button>
+  <i> Ficha -8 ({{mapa_fichas_cantidad.get('menos8')}} uds.) </i>
+  <button class="boton" (click)="actualizar_fichas('menos8', 1)">+</button><br>
+  <br>
 </div>
